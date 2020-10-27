@@ -1,0 +1,62 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double a, b, c, x1, x2;
+    cin >> a >> b >> c;
+    if (a == 0) {
+        if (b != 0) {
+            x1 = -c/b;
+            cout << fixed << setprecision(2) << x1;
+        }
+        else if (c == 0) {
+            cout << "Zero Equation";
+        }
+        else if (c != 0) {
+            cout << "Not An Equation";
+        }
+    }
+    else {
+        if (b == 0) {
+            if ( c== 0) {
+                cout << 0;
+            }
+            else if (a*c < 0) {
+                x1 = sqrt(-c/a);
+                x2 = -sqrt(-c/a);
+                cout << fixed << setprecision(2) << x1 <<'\n';
+                cout << fixed << setprecision(2) << x2;
+            }
+            else {
+                x1 = sqrt(c/a);
+                x2 = -sqrt(c/a);
+                double temp = 0;
+                cout << fixed << setprecision(2) << temp << "+" << x1 << "i" <<'\n';
+                cout << fixed << setprecision(2) << temp << x2 << "i";
+            }
+        }
+        else {
+            double i = (b*b - 4*a*c)/(4*a*a);
+            double j = -b/(2*a);
+            if(i == 0) {
+                x1 = j;
+                cout << fixed << setprecision(2) << x1;
+            }
+            else if(i > 0) {
+                x1 = j + sqrt(i);
+                x2 = j - sqrt(i);
+                cout << fixed << setprecision(2) << x1 <<'\n';
+                cout << fixed << setprecision(2) << x2;
+            }
+            else {
+                x1 = sqrt(-i);
+                x2 = -sqrt(-i);
+                cout << fixed << setprecision(2) << j << "+" << x1 << "i" <<'\n';
+                cout << fixed << setprecision(2) << j << x2 << "i";
+            }
+        }
+    }
+    return 0;
+}

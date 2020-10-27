@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+double fact (int n){
+    double m = 1;
+    for(int i = n; i > 0; i--) {
+        m *= i;
+    }
+    return m;
+}
+int main() {
+    int m,n;
+    double result;
+    cin >> m >> n;
+    if(m == n) {
+        result = 1;
+    }
+    else {
+        result = fact(n) / (fact(m) * fact(n-m));
+    }
+    cout << "result = " << result;
+    return 0;
+}

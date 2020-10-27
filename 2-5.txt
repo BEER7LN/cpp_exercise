@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int tower(int n, char sta, char aim, char tran) {
+    if (n > 1) {
+        tower(n-1, sta, tran, aim);
+        cout << n <<  ": "<< sta << " -> " << aim << endl;
+        tower(n-1, tran, aim, sta);
+    }
+    else
+        cout << n << ": "<< sta << " -> " << aim << endl;
+}
+int main() {
+    int num;
+    char a, c, b;
+    cin >> num;
+    cin >> a >> c >> b;
+    tower(num, a, c, b);
+    return 0;
+}

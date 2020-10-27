@@ -1,0 +1,19 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    double e = 1, m = 1;
+    int n, i;
+    cin >> n;
+    if(n == 0) {
+        cout << fixed <<setprecision(8) << e;
+    }
+    else {
+        for (i = 1; i <= n; i++) {
+            m *= i;
+            e  += (double)1/m;
+        }
+        cout << fixed <<setprecision(8) << e;
+    }
+    return 0;
+}

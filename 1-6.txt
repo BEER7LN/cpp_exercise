@@ -1,0 +1,23 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    double eps, sum = 0;
+    int i, m = 1;
+    cin >> eps;
+    for (i = 1; (double)1/i > eps; i += 3) {
+        sum += m * (double)1/i;
+        m *= -1;
+        if((double)1/(i+3) <= eps) {
+            sum += m * (double)1/(i+3);
+        }
+    }
+    if (sum != 0) {
+        cout << fixed << setprecision(6)<<"sum = " << sum;
+    }
+    else {
+        sum = 1;
+        cout << fixed << setprecision(6)<<"sum = " << sum;
+    }
+    return 0;
+}

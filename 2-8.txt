@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+void swap (int &a, int &b) {
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+void bbsort(int m, int s[]) {
+    int i, j, k;
+    for (i = 0; i < m-1; i++) {
+        for (j = 0; j < m - 1 - i; j++) {
+            if( s[j] > s[j+1]) {
+                swap (s[j], s[j+1]);
+            }
+        }
+        for (k = 0; k < m; k++) {
+            cout << s[k];
+            if ( k+1 < m )
+                cout << " ";
+        }
+        cout << '\n';
+    }
+    if ( m == 1)
+        cout << s[0];
+}
+int main() {
+    int n, i;
+    cin >> n;
+    int shu[n];
+    for (i = 0; i < n; i++) {
+        cin >> shu[i];
+    }
+    bbsort( n, shu);
+    return 0;
+}

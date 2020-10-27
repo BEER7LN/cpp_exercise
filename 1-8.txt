@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int cif(int a, int b) {
+    int result = 1;
+    for (; b > 0; b--) {
+        result *= a;
+    }
+    return result;
+}
+int main() {
+    int N, n, m, s;
+    cin >> N;
+    n = cif(10,(N-1));
+    for (;n < cif(10,N); n++) {
+        s = 0;
+        for (m = n; m > 0; m /= 10) {
+            s += cif((m%10),N);
+        }
+        if( s == n) {
+            cout << n <<'\n';
+        }
+    }
+    return 0;
+}

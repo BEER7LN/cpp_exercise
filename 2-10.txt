@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void swap(int &a, int &b) {
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+int main() {
+    int n[10];
+    int i, j;
+    for(i = 0; i < 10; i++) {
+        cin >> n[i];
+    }
+    for(i = 0; i < 9; i++) {
+        for(j = i+1; j < 10; j++) {
+            if(n[j] > n[i]) {
+                swap(n[j], n[i]);
+            }
+        }
+    }
+    for(i = 0; i < 10; i++) {
+        cout << setw(5) << n[i];
+    }
+    return 0;
+}

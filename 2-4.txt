@@ -1,0 +1,26 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int isprime (int q) {
+    int s;
+    if(q > 2 && q%2 == 0)
+        return 0;
+    else {
+        for (s = sqrt(q); s > 1; s--) {
+            if(q % s == 0)
+                return 0;
+        }
+    }
+    return 1;
+}
+int main() {
+    int N;
+    cin >> N;
+    for(int i = 2; i <= N/2; i++) {
+        if(isprime(i) == 1 && isprime(N - i) == 1 ) {
+            cout << N << " = " << i << " + " << (N - i);
+            break;
+        }
+    }
+    return 0;
+}

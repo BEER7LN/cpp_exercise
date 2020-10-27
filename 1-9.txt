@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+    long int n;
+    cin >> n;
+    if (n == 0) {
+        cout << 0 << " ";
+    }
+    for (;n > 0; n /= 10){
+        int m = n % 10;
+        cout << m <<" ";
+    }
+    return 0;
+}

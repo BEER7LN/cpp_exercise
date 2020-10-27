@@ -1,0 +1,19 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+using namespace std;
+int main() {
+    int a, b, c;
+    double s, p;
+    cin >> a >> b >> c;
+    if((a+b>c)&&(a+c>b)&&(b+c>a)&&(a>0)&&(b>0)&&(c>0)) {
+        double temp = (double)(a+b+c)/2;
+        s = sqrt(temp*(temp-a)*(temp-b)*(temp-c));
+        p = a+b+c;
+        cout << fixed << setprecision(2)<<"area = " << s << "; perimeter = " << p;
+    }
+    else{
+        cout << "These sides do not correspond to a valid triangle";
+    }
+    return 0;
+}

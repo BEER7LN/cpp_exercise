@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+using namespace std;
+double getaverage (int num, int s[]) {
+    int i,sum = 0;
+    for (i = 0; i < num; i++) {
+        sum += s[i];
+    }
+    return (double)(sum)/num;
+}
+double getvar (int num,double avg, int s[]) {
+    int i;
+    double sum = 0;
+    for (i = 0; i < num; i++) {
+        sum += (s[i] - avg) * (s[i] - avg);
+    }
+    return sqrt(sum / num);
+}
+int main() {
+    int n, i;
+    cin >> n;
+    int shu[n]; //必须先输入n后才能创建长度为n的数组
+    for (i = 0; i < n; i++) {
+        int temp;
+        cin >> temp;
+        shu[i] = temp;
+    }
+    double Avg = getaverage (n, shu);
+    cout << fixed << setprecision(5) <<getvar (n, Avg, shu);
+    return 0;
+}

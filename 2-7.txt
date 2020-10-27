@@ -1,0 +1,30 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+using namespace std;
+int getaverage (int num, int s[10]) {
+    int i,sum = 0;
+    for (i = 0; i < num; i++) {
+        sum += s[i];
+    }
+    return sum/num;
+}
+int getmin (int s[10]) {
+    int temp = s[0], i = 1;
+    while (i < 10) {
+        if (s[i] < temp)
+            temp = s[i];
+        i++;
+    }
+    return temp;
+}
+int main() {
+    int  i;
+    int shu[10]; //必须先输入n后才能创建长度为n的数组
+    for (i = 0; i < 10; i++) {
+        cin >> shu[i];
+    }
+    cout << "average=" << getaverage (10, shu) <<endl;
+    cout << "min=" << getmin ( shu) <<endl;
+    return 0;
+}
